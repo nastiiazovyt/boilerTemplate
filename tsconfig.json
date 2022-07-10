@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "allowJs": true,
+    "paths": {
+      "@/*": [
+        "src/js/*"
+      ]
+    },
+    "strict": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true
+  },
+  "include": [
+    "src/js/**/*"
+  ]
+}
