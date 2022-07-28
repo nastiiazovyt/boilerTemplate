@@ -1,0 +1,59 @@
+@use '/src/scss/vars' as v;
+
+.menu {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: v.dynamic-vw(1920, 1px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #3A3A22;
+    @media (min-width: 1921px) {
+      height: 1px;
+    }
+  }
+  &-container {
+    padding: v.dynamic-vw(1920, 180px) v.dynamic-vw(1920, 20px) v.dynamic-vw(1920, 220px) v.dynamic-vw(1920, 20px);
+    @media (min-width: 1921px) {
+      padding: 180px 20px 220px 20px;
+    }
+    .subtitle-desc {
+      max-width: v.dynamic-vw(1920, 313px);
+      width: 100%;
+      @media (min-width: 1921px) {
+        max-width: 313px;
+      }
+    }
+  }
+  &-title {
+    margin-bottom: v.dynamic-vw(1920, 180px);
+    font-size: v.dynamic-vw(1920, 100px);
+    line-height: 1;
+    color: v.$main;
+    font-family: v.$GramatikaR;
+    text-transform: uppercase;
+    max-width: v.dynamic-vw(1920, 1300px);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1921px) {
+      max-width: 1300px;
+      font-size: 100px;
+      margin-bottom: 180px;
+    }
+    &-first-line {
+      padding-left: v.dynamic-vw(1920, 90px);
+    }
+    &-second-line {
+    }
+    &-third-line {
+      padding-left: v.dynamic-vw(1920, 210px);
+    }
+    &-fourth-line {
+      padding-left: v.dynamic-vw(1920, 380px);
+    }
+  }
+}

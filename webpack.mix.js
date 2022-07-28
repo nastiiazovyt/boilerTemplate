@@ -1,8 +1,6 @@
 const mix = require('laravel-mix');
 const path = require('path');
 const fs = require('fs');
-const ESLintWebpackPlugin = require('eslint-webpack-plugin');
-
 
 mix.setPublicPath('./');
 mix.disableNotifications();
@@ -34,21 +32,12 @@ if (mix.inProduction()) {
 fs.readdirSync('src/scss/pages')
     .forEach(fileName => mix
         .sass(`src/scss/pages/${fileName}`, 'assets/css')
-        .options({ processCssUrls: false }));
+        .options({ processCssUrls: true }));
 
 
 fs.readdirSync('src/js/pages')
     .forEach(fileName => mix
         .ts(`src/js/pages/${fileName}`, 'assets/js'));
-
-mix.webpackConfig({
-    plugins: [
-        new ESLintWebpackPlugin({
-            fix: true,
-            extensions: ['js', 'ts', 'vue']
-        })
-    ]
-});
 
 mix.browserSync({
     files: [
@@ -59,6 +48,6 @@ mix.browserSync({
     watch: true,
     host: 'localhost',
     //Домен на локальном сервере
-    proxy: 'new-starter-template'
+    proxy: 'localhost:8888'
 });
 

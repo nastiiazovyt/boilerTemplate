@@ -1,0 +1,125 @@
+@use '/src/scss/vars' as v;
+
+.event {
+  position: relative;
+  overflow: hidden;
+  .subtitle-block {
+    margin-bottom: v.dynamic-vw(1920, 84px);
+    @media (min-width: 1921px) {
+      margin-bottom: 84px;
+    }
+  }
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #3A3A22;
+  }
+
+  &-container {
+    padding: v.dynamic-vw(1920, 80px) v.dynamic-vw(1920, 20px);
+    @media (min-width: 1921px) {
+      padding: 80px 20px;
+    }
+  }
+
+  &-card {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: v.dynamic-vw(1920, 20px);
+    padding-bottom: v.dynamic-vw(1920, 24px);
+    position: relative;
+    .subtitle-button {
+      opacity: 0;
+    }
+    @media (min-width: 1921px) {
+      column-gap: 20px;
+      padding-bottom: 24px;
+    }
+    &:not(:last-child) {
+      margin-bottom: v.dynamic-vw(1920, 24px);
+      @media (min-width: 1921px) {
+        margin-bottom: 24px;
+      }
+      &:before {
+        content: "";
+        width: 200%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: -50%;
+        background: v.$main;
+        opacity: .2;
+      }
+    }
+
+
+    .subtitle-desc {
+      grid-column: 5/ span 2;
+      grid-row: 1/ span 2;
+      max-width: v.dynamic-vw(1920, 345px);
+      width: 100%;
+      @media (min-width: 1921px) {
+        max-width: 345px;
+      }
+    }
+  }
+
+  &-pic {
+    grid-column: 1/ span 2;
+    grid-row: 1/ span 2;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &-name {
+    grid-column: 3/ span 1;
+    grid-row: 1/ span 1;
+    font-family: v.$GramatikaR;
+    line-height: 1.2;
+    font-size: v.dynamic-vw(1920, 18px);
+    color: v.$main;
+    @media (min-width: 1921px) {
+      font-size: 18px;
+    }
+  }
+
+  &-category {
+    grid-column: 3/ span 1;
+    grid-row: 2/ span 1;
+    align-self: flex-end;
+    font-family: v.$GramatikaR;
+    line-height: 1.2;
+    font-size: v.dynamic-vw(1920, 10px);
+    color: v.$main;
+    text-transform: uppercase;
+    opacity: .3;
+
+    @media (min-width: 1921px) {
+      font-size: 10px;
+    }
+  }
+
+  &-date {
+    grid-column: 4/ span 1;
+    grid-row: 2/ span 1;
+    align-self: flex-end;
+    font-family: v.$GramatikaR;
+    line-height: 1.2;
+    font-size: v.dynamic-vw(1920, 10px);
+    color: v.$main;
+    text-transform: uppercase;
+    opacity: .3;
+
+    @media (min-width: 1921px) {
+      font-size: 10px;
+    }
+  }
+}
