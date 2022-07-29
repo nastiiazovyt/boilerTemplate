@@ -2,18 +2,18 @@
     <div class="hero-container">
         <h1 class="hero-title">
             <div class="hero-title-first-line">
-                <span>когда еда</span>
+                <span class="hero-title-line">когда еда</span>
             </div>
             <div class="hero-title-second-line">
-                <span>это искусство</span>
+                <span class="hero-title-line">это искусство</span>
             </div>
         </h1>
-        <div class="hero-desc">
+        <div class="hero-desc hero-desc-onload">
             <div class="hero-desc-first-line">Мы помогаем создать неповторимую атмосферу</div>
             <div class="hero-desc-second-line">для каждого нашего гостя.</div>
         </div>
-        <div class="hero-video">
-            <video loop autoplay muted poster="assets/images/hero/hero-video-prewiew.png" src="/assets/videos/hero-video.mp4"></video>
+        <div class="hero-video-container">
+            <video class="hero-video hero-video-onload" loop autoplay muted poster="assets/images/hero/hero-video-prewiew.png" src="/assets/videos/hero-video.mp4"></video>
         </div>
         <div class="subtitle-block">
             <div class="subtitle">выбор локаций</div>

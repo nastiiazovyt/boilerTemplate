@@ -7,12 +7,14 @@
       padding: 270px 0 72px 0;
 
     }
+
     .subtitle-block {
       padding-left: v.dynamic-vw(1920, 20px);
       @media (min-width: 1921px) {
         padding-left: 20px;
       }
     }
+
     .subtitle-desc {
       max-width: v.dynamic-vw(1920, 330px);
       width: 100%;
@@ -35,20 +37,27 @@
       font-size: 160px;
       padding-left: 20px;
     }
+
+    &-line {
+      overflow: hidden;
+    }
   }
 
   &-desc {
     font-family: v.$GramatikaR;
     color: v.$main;
+    opacity: 1;
     line-height: 1.2;
     font-size: v.dynamic-vw(1920, 15px);
     margin-left: v.dynamic-vw(1920, 310px);
     margin-bottom: v.dynamic-vw(1920, 98px);
+    transition: opacity .8s ease-in-out;
     @media (min-width: 1921px) {
       font-size: 15px;
       margin-left: 310px;
       margin-bottom: 98px;
     }
+
     &-first-line {
       margin-bottom: v.dynamic-vw(1920, 4px);
       @media (min-width: 1921px) {
@@ -62,16 +71,42 @@
         margin-left: 16px;
       }
     }
+
+    &-onload {
+      opacity: 0;
+    }
   }
 
+
   &-video {
-    margin-bottom: v.dynamic-vw(1920, 24px);
-    @media (min-width: 1921px) {
-      margin-bottom: 24px;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity .8s ease-in-out;
+    z-index: 10;
+
+    &-onload {
+      opacity: 0;
     }
-    video {
-      width: 100%;
-      height: auto;
+
+    &-container {
+      margin-bottom: v.dynamic-vw(1920, 24px);
+      position: relative;
+
+      &:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background: v.$main;
+      }
+
+      @media (min-width: 1921px) {
+        margin-bottom: 24px;
+      }
     }
   }
 }

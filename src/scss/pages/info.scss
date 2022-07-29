@@ -89,6 +89,7 @@
     border: 1px solid rgba(58, 58, 34, 0.4);
     width: fit-content;
     border-radius: v.dynamic-vw(1920, 100px);
+    cursor: pointer;
     padding: v.dynamic-vw(1920, 14px) v.dynamic-vw(1920, 16px) v.dynamic-vw(1920, 12px) v.dynamic-vw(1920, 16px);
     @media (min-width: 1921px) {
       padding: 14px 16px 12px 16px;

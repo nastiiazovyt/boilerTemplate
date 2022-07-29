@@ -3,6 +3,7 @@
 .event {
   position: relative;
   overflow: hidden;
+
   .subtitle-block {
     margin-bottom: v.dynamic-vw(1920, 84px);
     @media (min-width: 1921px) {
@@ -34,18 +35,40 @@
     column-gap: v.dynamic-vw(1920, 20px);
     padding-bottom: v.dynamic-vw(1920, 24px);
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+      .subtitle-button {
+        opacity: 1;
+      }
+
+      .event-date {
+        opacity: 1;
+      }
+
+      .event-category {
+        opacity: 1;
+      }
+    }
+
     .subtitle-button {
       opacity: 0;
     }
+
     @media (min-width: 1921px) {
       column-gap: 20px;
       padding-bottom: 24px;
     }
+
     &:not(:last-child) {
       margin-bottom: v.dynamic-vw(1920, 24px);
       @media (min-width: 1921px) {
         margin-bottom: 24px;
       }
+      &:hover:before {
+        opacity: 1;
+      }
+
       &:before {
         content: "";
         width: 200%;
@@ -73,6 +96,7 @@
   &-pic {
     grid-column: 1/ span 2;
     grid-row: 1/ span 2;
+
     img {
       width: 100%;
       height: auto;
