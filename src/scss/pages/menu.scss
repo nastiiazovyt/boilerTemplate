@@ -147,7 +147,9 @@
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      justify-content: space-between;
     }
+
     &-info {
       display: flex;
       flex-flow: column nowrap;
@@ -155,11 +157,13 @@
       @media (min-width: 1921px) {
         margin-bottom: 18px;
       }
+
       span {
         font-family: v.$gramatika;
         line-height: 1.2;
         color: v.$main;
         text-transform: uppercase;
+
         &:nth-child(1) {
           font-weight: 300;
           opacity: .6;
@@ -170,6 +174,7 @@
             margin-bottom: 4px;
           }
         }
+
         &:nth-child(2) {
           font-size: v.dynamic-vw(1920, 12px);
           @media (min-width: 1921px) {
@@ -178,5 +183,12 @@
         }
       }
     }
+
+    &-cost {
+      align-items: flex-end;
+    }
   }
 }
+
+
+

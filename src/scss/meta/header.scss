@@ -15,10 +15,6 @@ main {
   opacity: 1;
   transition: opacity 1s ease-in-out;
 
-  &-onload {
-    opacity: 0;
-  }
-
   &-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -111,4 +107,8 @@ main {
       }
     }
   }
+}
+
+.onload {
+  opacity: 0;
 }

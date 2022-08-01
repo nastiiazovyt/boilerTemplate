@@ -24,11 +24,16 @@
                 </div>
                 <div class="subtitle-button">
                     <span class="subtitle-button-text">посмотреть локации</span>
-                    <svg width="18" height="6" viewBox="0 0 18 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 3L13 0.113247L13 5.88675L18 3ZM4.37114e-08 3.5L13.5 3.5L13.5 2.5L-4.37114e-08 2.5L4.37114e-08 3.5Z"
-                              fill="#3A3A22"/>
-                    </svg>
-
+                    <div class="subtitle-button-svg-container">
+                        <svg class="subtitle-svg-1 svg-not-hover1" width="18" height="6" viewBox="0 0 18 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 3L13 0.113247L13 5.88675L18 3ZM4.37114e-08 3.5L13.5 3.5L13.5 2.5L-4.37114e-08 2.5L4.37114e-08 3.5Z"
+                                  fill="#3A3A22"/>
+                        </svg>
+                        <svg class="subtitle-svg-2 svg-not-hover2" width="18" height="6" viewBox="0 0 18 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 3L13 0.113247L13 5.88675L18 3ZM4.37114e-08 3.5L13.5 3.5L13.5 2.5L-4.37114e-08 2.5L4.37114e-08 3.5Z"
+                                  fill="#3A3A22"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
