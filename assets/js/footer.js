@@ -8757,19 +8757,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
-gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger); //________________________________________________________________________
+//Анимация плавного появления блока при скролле
 
 var footerScrollAnimation = function footerScrollAnimation() {
   var footer = document.querySelector('.footer');
   gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(footer, {
-    y: 20,
+    y: 15,
     opacity: 0
   }, {
     y: 0,
     opacity: 1,
-    duration: 1,
+    duration: .8,
     scrollTrigger: {
-      trigger: footer
+      trigger: footer // start: 'center bottom-=100px',
+
     }
   });
 };

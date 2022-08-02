@@ -113,7 +113,7 @@
       top: -100%;
       left: 0;
       background: v.$button;
-      transition: top .3s ease-in-out .2s;
+      transition: top .3s cubic-bezier(0.87, 0, 0.13, 1) .2s;
     }
 
     &:before {
@@ -124,7 +124,7 @@
       top: 100%;
       left: 0;
       background: v.$button;
-      transition: top .3s ease-in-out;
+      transition: top .4s cubic-bezier(0.87, 0, 0.13, 1);
     }
 
     &:hover {
@@ -164,10 +164,10 @@
       svg {
         z-index: 10;
         position: absolute;
-        transition: left .5s ease-in-out;
+        transition: left .6s cubic-bezier(0.87, 0, 0.13, 1) .2s;
 
         path {
-          transition: fill .4s ease-in-out;
+          transition: fill .4s cubic-bezier(0.87, 0, 0.13, 1);
           fill: v.$button;
         }
       }
@@ -182,7 +182,7 @@
       text-transform: uppercase;
       position: relative;
       z-index: 10;
-      transition: color .5s ease-in-out;
+      transition: color .7s cubic-bezier(0.87, 0, 0.13, 1);
       @media (min-width: 1921px) {
         font-size: 14px;
       }

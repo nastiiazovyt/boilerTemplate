@@ -10011,18 +10011,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_1__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_1__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger); //________________________________________________________________________
+//Анимации плавного появления элементов на главной странице
 
-var heroOpacity = function heroOpacity() {
-  var heroDescription = document.querySelector('.hero-desc');
+var heroAnimation = function heroAnimation() {
+  var heroVideoContainer = document.querySelector('.hero-video-container');
   var heroVideo = document.querySelector('.hero-video');
-  heroDescription.classList.remove('hero-desc-onload');
-  heroVideo.classList.remove('hero-video-onload');
-};
+  var heroDescription = document.querySelector('.hero-desc');
+  var subtitleHero = document.querySelector('.hero-container .subtitle-block');
 
-window.addEventListener('load', heroOpacity);
-
-var heroTitleAnimation = function heroTitleAnimation() {
   if (document.querySelector('.hero-title')) {
     var heroTitleSplit = new split_type__WEBPACK_IMPORTED_MODULE_0__["default"]('.hero-title-line', {
       types: "chars"
@@ -10033,50 +10030,56 @@ var heroTitleAnimation = function heroTitleAnimation() {
     }, {
       yPercent: 0,
       stagger: {
-        each: .03
-      }
+        each: .025
+      },
+      duration: .5
     });
   }
-};
 
-window.addEventListener('load', heroTitleAnimation);
-
-var heroSubtitleScrollAnimation = function heroSubtitleScrollAnimation() {
-  var subtitleHero = document.querySelector('.hero-container .subtitle-block');
+  gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(heroVideoContainer, {
+    y: 30
+  }, {
+    y: 0,
+    duration: 1
+  });
+  gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(heroVideo, {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 3,
+    delay: 1
+  });
+  gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(heroVideoContainer, {
+    border: '1px solid #3A3A22'
+  }, {
+    border: '1px solid transparent',
+    duration: 3,
+    delay: 1
+  });
+  gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(heroDescription, {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 2,
+    delay: .5
+  });
   gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(subtitleHero, {
-    y: 10,
+    y: 15,
     opacity: 0
   }, {
     y: 0,
     opacity: 1,
-    duration: 1,
+    duration: .8,
     scrollTrigger: {
-      trigger: subtitleHero
+      trigger: subtitleHero,
+      start: 'center bottom-=50px'
     }
   });
 };
 
-window.addEventListener('load', heroSubtitleScrollAnimation);
+window.addEventListener('load', heroAnimation); //________________________________________________________________________
+//Анимация стрелочек на ховере кнопки
 
-var heroVideoAnimation = function heroVideoAnimation() {
-  var heroVideo = document.querySelector('.hero-video-container');
-  gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(heroVideo, {
-    y: 35,
-    opacity: 0
-  }, {
-    y: 0,
-    opacity: 1,
-    duration: 1
-  });
-  gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(heroVideo, {
-    border: '1px solid #3A3A22'
-  }, {
-    border: '1px solid transparent',
-    duration: 3
-  });
-};
-
-window.addEventListener('load', heroVideoAnimation);
 var buttonHero = document.querySelector('.hero-container .subtitle-button');
 var svg1 = document.querySelector('.hero-container .subtitle-svg-1');
 var svg2 = document.querySelector('.hero-container .subtitle-svg-2');

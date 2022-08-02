@@ -1,4 +1,4 @@
-<header class="header onload">
+<header class="header">
     <div class="header-container header-container-not-scaled">
         <div class="header-item">
             <svg width="115" height="48" viewBox="0 0 115 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,14 +10,14 @@
                 <path d="M8.36608 25.6888H5V23.9182H8.35201V4.90117C8.6114 4.83205 15.9931 4.80969 16.4294 4.86864C16.5005 5.4481 16.508 6.03373 16.4515 6.61484H10.1738V23.8938C10.5076 23.9304 10.8454 23.906 11.1792 23.9101C11.513 23.9141 11.885 23.9101 12.2369 23.9101H16.3972V25.6888H10.1517V43.7545H8.36608V25.6888Z" fill="#3A3A22"/>
             </svg>
         </div>
-        <div class="header-item">
-            <a href="">меню</a>
+        <div class="header-item menu-link">
+            <span>меню</span>
         </div>
-        <div class="header-item">
-            <a href="">события</a>
+        <div class="header-item event-link">
+            <span>события</span>
         </div>
-        <div class="header-item">
-            <a href="">контакты</a>
+        <div class="header-item contacts-link">
+            <span>контакты</span>
         </div>
         <div class="header-item">
             <div class="subtitle-button">

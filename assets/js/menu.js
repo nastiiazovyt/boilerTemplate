@@ -10011,75 +10011,128 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_1__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_1__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger); //________________________________________________________________________
+//Анимация заголовока
 
 var menuTitleAnimation = function menuTitleAnimation() {
-  if (document.querySelector('.menu-title')) {
-    var menuTitleSplit = new split_type__WEBPACK_IMPORTED_MODULE_0__["default"]('.menu-title-line', {
+  var menuTitle = document.querySelector('.menu-title');
+
+  if (menuTitle) {
+    var menuTitleSplit1 = new split_type__WEBPACK_IMPORTED_MODULE_0__["default"]('.menu-title-first-line', {
       types: "chars"
     });
-    var menuTitleArray = document.querySelectorAll('.menu-title-line .char');
-    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(menuTitleArray, {
+    var menuTitleSplit2 = new split_type__WEBPACK_IMPORTED_MODULE_0__["default"]('.menu-title-second-line', {
+      types: "chars"
+    });
+    var menuTitleSplit3 = new split_type__WEBPACK_IMPORTED_MODULE_0__["default"]('.menu-title-third-line', {
+      types: "chars"
+    });
+    var menuTitleSplit4 = new split_type__WEBPACK_IMPORTED_MODULE_0__["default"]('.menu-title-fourth-line', {
+      types: "chars"
+    });
+    var menuTitleArrayFirst = document.querySelectorAll('.menu-title-first-line .char');
+    var menuTitleArraySecond = document.querySelectorAll('.menu-title-second-line .char');
+    var menuTitleArrayThird = document.querySelectorAll('.menu-title-third-line .char');
+    var menuTitleArrayFourth = document.querySelectorAll('.menu-title-fourth-line .char');
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(menuTitleArrayFirst, {
       yPercent: 100
     }, {
       yPercent: 0,
       stagger: {
-        each: .01
+        each: .02
+      },
+      duration: .5,
+      scrollTrigger: {
+        trigger: menuTitle,
+        start: 'center bottom-=100px'
+      }
+    });
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(menuTitleArraySecond, {
+      yPercent: 100
+    }, {
+      yPercent: 0,
+      stagger: {
+        each: .02
+      },
+      duration: .5,
+      scrollTrigger: {
+        trigger: menuTitle,
+        start: 'center bottom-=100px'
+      }
+    });
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(menuTitleArrayThird, {
+      yPercent: 100
+    }, {
+      yPercent: 0,
+      stagger: {
+        each: .02
+      },
+      delay: .1,
+      duration: .5,
+      scrollTrigger: {
+        trigger: menuTitle,
+        start: 'center bottom-=100px'
+      }
+    });
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(menuTitleArrayFourth, {
+      yPercent: 100
+    }, {
+      yPercent: 0,
+      stagger: {
+        each: .02
+      },
+      delay: .2,
+      duration: .5,
+      scrollTrigger: {
+        trigger: menuTitle,
+        start: 'center bottom-=100px'
       }
     });
   }
 };
 
+window.addEventListener('load', menuTitleAnimation); //________________________________________________________________________
+//Анимация плавного появления блока с описанием при скролле
+
 var menuSubtitleScrollAnimation = function menuSubtitleScrollAnimation() {
   var subtitleMenu = document.querySelector('.menu-container .subtitle-block');
   gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(subtitleMenu, {
-    y: 10,
+    y: 15,
     opacity: 0
   }, {
     y: 0,
     opacity: 1,
-    duration: 1,
+    duration: .8,
     scrollTrigger: {
-      trigger: subtitleMenu
+      trigger: subtitleMenu,
+      start: 'center bottom-=100px'
     }
   });
 };
 
-window.addEventListener('load', menuSubtitleScrollAnimation);
+window.addEventListener('load', menuSubtitleScrollAnimation); //________________________________________________________________________
+//Анимация плавного появления блока при скролле
 
 var menuScrollAnimation = function menuScrollAnimation() {
   var menu = document.querySelector('.menu');
+  var subtitleHero = document.querySelector('.hero-container .subtitle-block');
   gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(menu, {
-    y: 20,
+    y: 15,
     opacity: 0
   }, {
     y: 0,
     opacity: 1,
-    duration: 1,
+    duration: .8,
     scrollTrigger: {
-      trigger: menu
+      trigger: subtitleHero,
+      start: 'center bottom-=100px'
     }
   });
 };
 
-window.addEventListener('load', menuScrollAnimation);
+window.addEventListener('load', menuScrollAnimation); //________________________________________________________________________
+//Анимация стрелочек на ховере кнопки
 
-var menuBlockScrollAnimation = function menuBlockScrollAnimation() {
-  var menuBlock = document.querySelector('.menu-block');
-  gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(menuBlock, {
-    y: 20,
-    opacity: 0
-  }, {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    scrollTrigger: {
-      trigger: menuBlock
-    }
-  });
-};
-
-window.addEventListener('load', menuBlockScrollAnimation);
 var buttonMenu = document.querySelector('.menu-container .subtitle-button');
 var svg1 = document.querySelector('.menu-container .subtitle-svg-1');
 var svg2 = document.querySelector('.menu-container .subtitle-svg-2');

@@ -35,24 +35,9 @@
     column-gap: v.dynamic-vw(1920, 20px);
     padding-bottom: v.dynamic-vw(1920, 24px);
     position: relative;
-
-    &:hover {
-      cursor: pointer;
-      .subtitle-button {
-        opacity: 1;
-      }
-
-      .event-date {
-        opacity: 1;
-      }
-
-      .event-category {
-        opacity: 1;
-      }
-    }
-
     .subtitle-button {
       opacity: 0;
+      transition: opacity .2s ease-in-out;
     }
 
     @media (min-width: 1921px) {
@@ -91,6 +76,21 @@
         max-width: 345px;
       }
     }
+
+    &:hover {
+      cursor: pointer;
+      .subtitle-button {
+        opacity: 1;
+      }
+
+      .event-date {
+        opacity: 1;
+      }
+
+      .event-category {
+        opacity: 1;
+      }
+    }
   }
 
   &-pic {
@@ -125,7 +125,7 @@
     color: v.$main;
     text-transform: uppercase;
     opacity: .3;
-
+    transition: opacity .2s ease-in-out;
     @media (min-width: 1921px) {
       font-size: 10px;
     }
@@ -141,7 +141,7 @@
     color: v.$main;
     text-transform: uppercase;
     opacity: .3;
-
+    transition: opacity .2s ease-in-out;
     @media (min-width: 1921px) {
       font-size: 10px;
     }

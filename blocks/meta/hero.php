@@ -13,7 +13,7 @@
             <div class="hero-desc-second-line">для каждого нашего гостя.</div>
         </div>
         <div class="hero-video-container">
-            <video class="hero-video hero-video-onload" loop autoplay muted poster="assets/images/hero/hero-video-prewiew.png" src="/assets/videos/hero-video.mp4"></video>
+            <video class="hero-video" loop autoplay muted poster="assets/images/hero/hero-video-prewiew.png" src="/assets/videos/hero-video.mp4"></video>
         </div>
         <div class="subtitle-block">
             <div class="subtitle">выбор локаций</div>

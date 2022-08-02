@@ -51,7 +51,6 @@
     font-size: v.dynamic-vw(1920, 15px);
     margin-left: v.dynamic-vw(1920, 310px);
     margin-bottom: v.dynamic-vw(1920, 98px);
-    transition: opacity 1.2s ease-in-out;
     @media (min-width: 1921px) {
       font-size: 15px;
       margin-left: 310px;
@@ -71,22 +70,13 @@
         margin-left: 16px;
       }
     }
-
-    &-onload {
-      opacity: 0;
-    }
   }
 
   &-video {
     width: 100%;
     height: auto;
     opacity: 1;
-    transition: opacity .8s ease-in-out;
     z-index: 10;
-
-    &-onload {
-      opacity: 0;
-    }
 
     &-container {
       margin-bottom: v.dynamic-vw(1920, 24px);

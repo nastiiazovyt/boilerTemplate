@@ -1,19 +1,15 @@
 import SplitType from "split-type";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 
-const heroOpacity = () => {
-    let heroDescription = document.querySelector('.hero-desc')
+//________________________________________________________________________
+//Анимации плавного появления элементов на главной странице
+const heroAnimation = () => {
+    let heroVideoContainer = document.querySelector('.hero-video-container')
     let heroVideo = document.querySelector('.hero-video')
-    heroDescription.classList.remove('hero-desc-onload')
-    heroVideo.classList.remove('hero-video-onload')
-}
-
-window.addEventListener('load', heroOpacity)
-
-const heroTitleAnimation = () => {
+    let heroDescription = document.querySelector('.hero-desc')
+    let subtitleHero = document.querySelector('.hero-container .subtitle-block')
     if (document.querySelector('.hero-title')) {
         const heroTitleSplit = new SplitType('.hero-title-line', {types: "chars"})
         let heroTitleArray = document.querySelectorAll('.hero-title .char')
@@ -22,52 +18,61 @@ const heroTitleAnimation = () => {
         }, {
             yPercent: 0,
             stagger: {
-                each: .03
-            }
+                each: .025
+            },
+            duration: .5,
         })
     }
-}
-
-window.addEventListener('load', heroTitleAnimation)
-
-const heroSubtitleScrollAnimation = () => {
-    let subtitleHero = document.querySelector('.hero-container .subtitle-block')
-    gsap.fromTo(subtitleHero, {
-        y: 10,
-        opacity: 0,
+    gsap.fromTo(heroVideoContainer, {
+        y: 30,
     }, {
         y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-            trigger: subtitleHero,
-        }
-    })
-}
-
-window.addEventListener('load', heroSubtitleScrollAnimation)
-
-const heroVideoAnimation = () => {
-    let heroVideo = document.querySelector('.hero-video-container')
-    gsap.fromTo(heroVideo, {
-        y: 35,
-        opacity: 0,
-    }, {
-        y: 0,
-        opacity: 1,
         duration: 1,
     })
 
     gsap.fromTo(heroVideo, {
+        opacity: 0,
+    }, {
+        opacity: 1,
+        duration: 3,
+        delay: 1,
+    })
+
+    gsap.fromTo(heroVideoContainer, {
         border: '1px solid #3A3A22',
     }, {
         border: '1px solid transparent',
         duration: 3,
+        delay: 1,
+    })
+
+    gsap.fromTo(heroDescription, {
+        opacity: 0,
+    }, {
+        opacity: 1,
+        duration: 2,
+        delay: .5,
+    })
+
+    gsap.fromTo(subtitleHero, {
+        y: 15,
+        opacity: 0,
+    }, {
+        y: 0,
+        opacity: 1,
+        duration: .8,
+        scrollTrigger: {
+            trigger: subtitleHero,
+            start: 'center bottom-=50px',
+
+        }
     })
 }
 
-window.addEventListener('load', heroVideoAnimation)
+window.addEventListener('load', heroAnimation)
 
+//________________________________________________________________________
+//Анимация стрелочек на ховере кнопки
 let buttonHero = document.querySelector('.hero-container .subtitle-button')
 let svg1 = document.querySelector('.hero-container .subtitle-svg-1')
 let svg2 = document.querySelector('.hero-container .subtitle-svg-2')

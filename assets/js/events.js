@@ -13,24 +13,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
-gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger); //________________________________________________________________________
+//Анимация плавного появления блока при скролле
 
 var eventScrollAnimation = function eventScrollAnimation() {
   var event = document.querySelector('.event');
   gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(event, {
-    y: 10,
+    y: 15,
     opacity: 0
   }, {
     y: 0,
     opacity: 1,
-    duration: 1,
+    duration: .8,
     scrollTrigger: {
-      trigger: event
+      trigger: event // start: 'center bottom-=100px',
+
     }
   });
 };
 
-window.addEventListener('load', eventScrollAnimation);
+window.addEventListener('load', eventScrollAnimation); //________________________________________________________________________
+//Анимация стрелочек на ховере кнопки
+
 var buttonEvents = document.querySelector('.event-container .subtitle-button');
 var svg1 = document.querySelector('.event-container .subtitle-svg-1');
 var svg2 = document.querySelector('.event-container .subtitle-svg-2');

@@ -1,4 +1,5 @@
 @use '/src/scss/vars' as v;
+$headerScrollTransition: .3s ease-in-out;
 
 main {
   padding-top: v.dynamic-vw(1920, 110px);
@@ -13,33 +14,40 @@ main {
   width: 100%;
   z-index: 100;
   opacity: 1;
-  transition: opacity 1s ease-in-out;
 
   &-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     align-self: center;
     column-gap: v.dynamic-vw(1920, 20px);
+    transition: padding $headerScrollTransition;
+    position: relative;
+    &:before {
+      content: "";
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      background: v.$main;
+      position: absolute;
+      height: 1px;
+      transition: opacity $headerScrollTransition;
+    }
     &-not-scaled {
       padding: v.dynamic-vw(1920, 25px) v.dynamic-vw(1920, 20px);
+      &:before {
+        opacity: 0;
+      }
       @media (min-width: 1921px) {
         padding: 25px 20px;
       }
     }
     &-scaled {
-      padding: v.dynamic-vw(1920, 8px) v.dynamic-vw(1920, 20px);
-      position: relative;
+      padding: v.dynamic-vw(1920, 2px) v.dynamic-vw(1920, 20px);
       &:before {
-        content: "";
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        background: v.$main;
-        position: absolute;
-        height: 1px;
+        opacity: 1;
       }
       @media (min-width: 1921px) {
-        padding: 8px 20px;
+        padding: 2px 20px;
       }
     }
 
@@ -55,7 +63,7 @@ main {
     text-transform: uppercase;
     font-size: v.dynamic-vw(1920, 14px);
     color: v.$main;
-    padding: v.dynamic-vw(1920, 3px) 0;
+    padding: v.dynamic-vw(1920, 5px) 0;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -77,7 +85,7 @@ main {
 
     @media (min-width: 1921px) {
       font-size: 14px;
-      padding: 3px 0;
+      padding: 5px 0;
     }
 
     &:nth-child(1) {
@@ -107,8 +115,4 @@ main {
       }
     }
   }
-}
-
-.onload {
-  opacity: 0;
 }
